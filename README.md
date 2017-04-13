@@ -1,2 +1,2 @@
 # property-binding-to-map
-Demonstration of Spring property binding anamoly.
+Demonstration of Spring property binding anomaly. 

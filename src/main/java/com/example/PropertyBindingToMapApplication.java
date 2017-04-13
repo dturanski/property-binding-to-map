@@ -27,7 +27,11 @@ public class PropertyBindingToMapApplication {
 	
 	static class Foo {
 		private String bar;
-		
+	
+		/**
+		 * This example only works with a single constructor arg.
+		 * @param bar
+		 */
 		public Foo(String bar) {
 			this.bar = bar;
 		}
