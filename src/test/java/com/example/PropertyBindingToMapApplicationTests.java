@@ -11,12 +11,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.example.PropertyBindingToMapApplication.MyProperties;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest("PROPS_FOOS_BAR1_BAR=bar")
+@SpringBootTest("PROPS_FOOS_FOO1_BAR=bar")
 /**
  * Demonstrates unexpected behavior binding an environment variable to a Map.
  * PROPS = prefix
  * FOOS  = Map
- * BAR1  = Intended key
+ * FOO1  = Intended key
  * BAR   = Property name on value object. Apparently binds only to constructor arg.
  *  
  * 
@@ -29,9 +29,10 @@ public class PropertyBindingToMapApplicationTests {
 	MyProperties props;
 
 	@Test
+	//Probably shouldn't pass but does.
 	public void contextLoads() {
-		assertThat(props.getFoos().get("BAR1_BAR")).isNotNull();
-		assertThat(props.getFoos().get("BAR1_BAR").getBar()).isEqualTo("bar");
+		assertThat(props.getFoos().get("FOO1_BAR")).isNotNull();
+		assertThat(props.getFoos().get("FOO1_BAR").getBar()).isEqualTo("bar");
 	}
 
 }
